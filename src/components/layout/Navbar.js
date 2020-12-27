@@ -1,26 +1,31 @@
-import React, {Component} from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
+import UserItem from '../users/UserItem';
 
 
-export class Navbar extends Component {
-    static defaultProps = {
-        title: "Title"
-    };
+const Navbar = props => {
 
-    static propTypes = {
-        title: PropTypes.string.isRequired
-    };
+    return (
+        <nav className='navbar bg-primary'>
+            <h1>
+                <i className='fab fa-github' /> {props.title}
+            </h1>
+        </nav>
+    )
 
-    render() {
-        return (
-            <nav className='navbar bg-primary'>
-                <h1>
-                    <i className='fab fa-github' /> {this.props.title}
-                </h1>
-            </nav>
-        )
-    }
 }
+
+Navbar.defaultProps = {
+    title: "Title"
+};
+
+Navbar.propTypes = {
+    title: PropTypes.string.isRequired
+};
+
+UserItem.propTypes = {
+    user: PropTypes.object.isRequired
+};
 
 export default Navbar
 
