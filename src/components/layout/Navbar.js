@@ -1,31 +1,28 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import UserItem from '../users/UserItem';
+import React from "react";
+import PropTypes from "prop-types";
+import UserItem from "../users/UserItem";
+import "../../App.css";
 
-
-const Navbar = props => {
-
-    return (
-        <nav className='navbar bg-primary'>
-            <h1>
-                <i className='fab fa-github' /> {props.title}
-            </h1>
-        </nav>
-    )
-
-}
+const Navbar = ({ title }) => {
+  return (
+    <nav className="navbar bg-primary">
+      <h1>
+        <i className="fab fa-github" /> {title}
+      </h1>
+    </nav>
+  );
+};
 
 Navbar.defaultProps = {
-    title: "Title"
+  title: "Github finder",
 };
 
 Navbar.propTypes = {
-    title: PropTypes.string.isRequired
+  title: PropTypes.string.isRequired,
 };
 
 UserItem.propTypes = {
-    user: PropTypes.object.isRequired
+  user: PropTypes.object.isRequired,
 };
 
-export default Navbar
-
+export default Navbar;
